@@ -1,0 +1,11 @@
+    <li class="card">
+      <div class="card-top">
+        <h3>{title}</h3>
+        <a class="star {star_class}" href="/favorite/{id}" name="favorite_button" title="{star_label}" aria-label="{star_label}">{star_icon}</a>
+      </div>
+      <p>{details}</p>
+      <div class="card-actions">
+        <a class="button" href="/update/{id}" name="edit_button">Editar</a>
+        <a class="button button-danger" href="/delete/{id}" name="delete_button">Apagar</a>
+      </div>
+    </li>

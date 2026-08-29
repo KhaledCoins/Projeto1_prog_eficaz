@@ -1,0 +1,205 @@
+:root {
+  --bg: #f3f0e7;
+  --surface: #ffffff;
+  --note: #fff7bd;
+  --note-favorite: #ffe9a8;
+  --text: #2f2b26;
+  --muted: #7a7266;
+  --accent: #e0a800;
+  --danger: #c4453c;
+  --border: #e0d9c8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 0 3rem;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Cabeçalho */
+
+.header {
+  padding: 2rem 1rem 1.5rem;
+  text-align: center;
+}
+
+.logo {
+  width: 220px;
+  max-width: 70%;
+  height: auto;
+}
+
+.tagline {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Formulários */
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  padding: 1.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.note-form h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.note-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.note-form input[type="text"] {
+  padding: 0.6rem 0.7rem;
+  font: inherit;
+  color: var(--text);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.note-form input[type="text"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.note-form input[type="submit"] {
+  margin-top: 0.8rem;
+  padding: 0.6rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--text);
+  background-color: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.note-form input[type="submit"]:hover {
+  filter: brightness(1.08);
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+/* Lista de anotações */
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--note);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.card:has(.star.on) {
+  background-color: var(--note-favorite);
+  border-color: var(--accent);
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+
+.card p {
+  flex-grow: 1;
+  margin: 0.5rem 0 1rem;
+  color: #4a443c;
+  overflow-wrap: anywhere;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Botões e ícones */
+
+.button {
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.button:hover {
+  background-color: #ffffff;
+}
+
+.button-danger {
+  color: var(--danger);
+  border-color: rgba(196, 69, 60, 0.35);
+}
+
+.button-ghost {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--muted);
+}
+
+.star {
+  font-size: 1.3rem;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.star.on {
+  color: var(--accent);
+}
+
+.star:hover {
+  color: var(--accent);
+}
